@@ -1,5 +1,6 @@
 module Types
   class MutationType < Types::BaseObject
+    field :nutrition_delete, mutation: Mutations::NutritionDelete
     field :food_delete, mutation: Mutations::FoodDelete
     field :nutrition_update, mutation: Mutations::NutritionUpdate
     field :food_update, mutation: Mutations::FoodUpdate
