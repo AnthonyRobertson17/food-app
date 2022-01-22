@@ -9,5 +9,11 @@ module Types
     def all_food
       Food.all
     end
+
+    field :nutrition, [Types::NutritionType], null: false, description: 'Get all the nutrition facts.'
+
+    def nutrition
+      Nutrition.all
+    end
   end
 end
