@@ -15,5 +15,14 @@ module Types
     def nutrition
       Nutrition.all
     end
+
+    field :food, Types::FoodType, null: false do
+      description 'Get a food item based on an id.'
+      argument :id, ID, required: true
+    end
+
+    def food(id:)
+      Food.find(id)
+    end
   end
 end
