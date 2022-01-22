@@ -24,5 +24,14 @@ module Types
     def food(id:)
       Food.find(id)
     end
+
+    field :find_food, [Types::FoodType], null: false do
+      description 'Find food types with a specific place of origin'
+      argument :place_of_origin, String, required: true
+    end
+
+    def find_food(place_of_origin:)
+      Food.where(place_of_origin: place_of_origin)
+    end
   end
 end
